@@ -6,13 +6,13 @@
       <th>Title</th>
       <th>Status</th>
       <th>Salary</th>
-      <th>HireDate</th>
+      <th>PassPort Number</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.employeeId}}</td>
       <td>
         <div class="d-flex align-items-center">
           <img
@@ -22,20 +22,20 @@
               class="rounded-circle"
               />
           <div class="ms-3">
-            <p class="fw-bold mb-1">John Doe</p>
-            <p class="text-muted mb-0">john.doe@gmail.com</p>
+            <p class="fw-bold mb-1">{{employee.firstName}} {{employee.lastName}}</p>
+            <p class="text-muted mb-0">{{employee.email}}</p>
           </div>
         </div>
       </td>
       <td>
-        <p class="fw-normal mb-1">Software engineer</p>
-        <p class="text-muted mb-0">IT department</p>
+        <p class="fw-normal mb-1">{{employee.title}}</p>
+        <p class="text-muted mb-0">{{employee.department}}</p>
       </td>
       <td>
         <span class="badge badge-success rounded-pill d-inline">Active</span>
       </td>
       <td>100,000.00</td>
-      <td>HireDate</td>
+      <td>{{employee.passportNumber}}</td>
       <td>
         <button type="button" class="btn btn-link btn-sm btn-rounded">
           Edit
